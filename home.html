@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footy4teller</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Custom CSS for Navbar */
+    .navbar-custom {
+      background-color: darkslategray !important;
+    }
+    
+    /* Custom CSS for Navbar Items */
+    .navbar-nav .nav-link {
+      color: rgb(25, 165, 165) !important; /* Set color to aqua */
+    }
+    .navbar-nav .nav-link:hover {
+      color: aqua !important; /* Set color to aqua on hover */
+    }
+    /* Custom CSS for Jumbotron */
+    .custom-jumbotron {
+      background-color: rgba(0, 128, 0, 0.3); /* Light green background */
+      margin-top: 0 !important; /* No margin on top */
+      border-radius: 0; /* No border radius */
+      text-align: center; /* Center text */
+      padding: 20px;
+      position: relative; /* Relative positioning for overlay */
+      overflow: hidden; /* Hide overflow */
+    }
+    .jumbotron-image {
+      position: absolute; /* Absolute positioning for image */
+      top: 0;
+      left: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      z-index: -1; /* Behind content */
+      object-fit: cover; /* Cover the jumbotron size */
+    }
+    .jumbotron-content {
+      color: white; /* Set text color to white */
+    
+    }
+    .jumbotron-content a{
+      color: aqua;
+    }
+    .jumbotron-content a:hover{
+      opacity: 5;
+    }
+    .jumbotron-content h2 {
+      color: aqua; /* Set h1 color to green */
+      font-size: 20px;
+    }
+    @media (max-width: 576px) {
+      .custom-jumbotron {
+        height: auto; /* Auto height on mobile devices */
+      }
+      .jumbotron-content {
+        text-align: center; /* Right align content on mobile devices */
+      }
+      
+    }
+    
+    .prediction-card {
+      margin-bottom: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+    }
+
+    .prediction-card:hover {
+      box-shadow: 0 0 20px rgb(5, 219, 94); /* Add shadow on hover */
+    }
+
+    .card-header {
+      background-color: darkslategray;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+     /* font-weight: bold; */
+    }
+
+    .card-body {
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+
+    .prediction-text {
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .prediction-result {
+      font-size: 14px;
+      color: darkslategray;
+      text-align: center;
+    }
+    .btn {
+    background-color: darkslategray;
+    color: aqua;
+  }
+.btn:hover {
+    opacity: 5;
+    
+  }
+    .navbar-toggler{
+      border: none;
+    }
+    a.more{
+      color: aquamarine;
+      
+    }
+    a.more:hover{
+      text-decoration: none;
+      color: black;
+    }
+    .list-unstyled{
+      color: aqua;
+      font-size: 13px;
+    }
+    footer a {
+
+    color: aqua;
+    font-size: 12px;
+    }
+    footer h5 {
+font-size: 15px;
+}
+    footer a:hover{
+      color: black;
+text-decoration: none;
+}
+.card-body{
+  font-size: 13px;
+}
+.card-body h5{
+  color:darkslategray ;
+}
+p{
+  font-size: 13px;
+}
+.card-title{
+  font-size: 15px;
+}
+h4{
+  font-size: 15px;
+}
+.about h4{
+  color: darkslategray;
+}
+.nav-item{
+  font-size: 14px;
+}
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-custom">
+  <a class="navbar-brand" href="#" style="color: aqua;">Footy4teller</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars" style="color: aqua;"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Predictions</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron custom-jumbotron container-fluid">
+  <img src="images/bannerbg.jpg" class="jumbotron-image" alt="Background Image">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 jumbotron-content">
+      <h2 ><b>Free football predictions</b></h2>
+      <p >Get best predictions <br>For payment after win!</p>
+      <a href="#" class="btn btn-sm">Get tips</a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" >
+  <div class="row" >
+    <div class="col-lg-6 col-md-12">
+      <h4><b>Today's Predictions</b></h4>
+    </div>
+    <div class="col-lg-6 text-lg-right text-md-left mb-2">
+        <button class="btn btn-sm   " >Previous</button>
+      <button class="btn btn-sm  " >Next</button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+      <!-- First Row -->
+      <div class="col-md-6">
+        <!-- Prediction Card 1 -->
+        <div class="card prediction-card">
+          <div class="card-header">
+           Liverpool vs Mancity 
+          </div>
+          <div class="card-body">
+            <p class="prediction-text">Prediction:</p>
+            <p class="prediction-result">Ft Dcx2 & gg</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- Prediction Card 2 -->
+        <div class="card prediction-card">
+          <div class="card-header">
+            Astonvilla vs Tottenham
+          </div>
+          <div class="card-body">
+            <p class="prediction-text">Prediction:</p>
+            <p class="prediction-result">Ft Ov35</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Second Row -->
+      <div class="col-md-6">
+        <!-- Prediction Card 3 -->
+        <div class="card prediction-card">
+          <div class="card-header">
+            Fiorentina vs Roma
+          </div>
+          <div class="card-body">
+            <p class="prediction-text">Prediction:</p>
+            <p class="prediction-result">Ft Draw</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- Prediction Card 4 -->
+        <div class="card prediction-card">
+          <div class="card-header">
+            Psg vs Reims
+          </div>
+          <div class="card-body">
+            <p class="prediction-text">Prediction:</p>
+            <p class="prediction-result">Ft Ov25</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Add this code after the prediction cards -->
+
+<div class="container-fluid mt-4">
+      <div class="col-lg-6 col-md-12">
+      <h4><b>Sports Articles</b></h4>
+    </div>
+  <div class="row">
+    <!-- First Article -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card">
+        <img src="images/article1.jpg" class="card-img-top" alt="Article 1" style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">Arsenal edge brenford</h5>
+          <p class="card-text">Gunners take 2-1 win in London as German star Kai Havertz scores late to rescue his team.</p>
+          <a href="#" class="btn btn-sm ">Read More</a>
+        </div>
+      </div>
+    </div>
+    <!-- Second Article -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card">
+        <img src="images/article2.jpg" class="card-img-top" alt="Article 2" style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">Atletico youth</h5>
+          <p class="card-text">In the UEFA Youth League tournament, Atletico Madrid U19 takes a 1 place in the standings: with 15 points, 5 wins, 0 draws and 1 losses. </p>
+          <a href="#" class="btn btn-sm ">Read More</a>
+        </div>
+      </div>
+    </div>
+    <!-- Third Article -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card">
+        <img src="images/article3.jpg" class="card-img-top" alt="Article 3" style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">Women Soccer</h5>
+          <p class="card-text">The United States have won four times. The other winners are Germany, with two titles, and Japan, Norway, and Spain with one title each.</p>
+          <a href="#" class="btn btn-sm ">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container-fluid about">
+        <h4 >Free football predictions</h4>
+        <p>
+          Football betting is fun, but it can be a high-risk venture without
+          some level of knowledge and guidance. Soccer fans looking for
+          websites that offer accurate forecasts go straight to the best
+          football prediction site in the world, Footy4teller.<br />
+
+          We are an online football prediction site that provides free
+          accurate football predictions and sports betting tips to its
+          users. Here we believe victory is better guaranteed, so we give
+          you an edge by providing well-researched football match forecasts
+          that are properly categorized and include the most recent odds
+          offered by bookmakers.<br />
+
+          Our unique interface makes it easy for users to view the markets
+          they are interested in, such as double chance, over 2.5 goals, or
+          HTFT tips. We provide soccer predictions for over 30 popular
+          leagues globally, including the English Premier League, German
+          Bundesliga, Spanish La Liga, Italian Serie A, and French Ligue 1.
+          Our experts make forecasts for today's matches and ensure that no
+          matches in lower leagues are left out. We also provide match
+          previews, reports, and blogs about everything football betting. So
+          our users are regularly updated with the latest happenings in the
+          world of sports through our social media pages.<br />
+
+          
+        </p>
+
+        
+        
+        <h4 >Payment after win</h4>
+        <p>
+          We also provide expert tips for payment after win.Our
+          experts work tirelessly to provide our esteemed subscribers with
+          the most reliable tips.
+          Safe 3-5 odds are provided to highstakers only as the odds are safe and only sensible that one stakes high for maximum profit.<br />
+          We use relevant statistics and trends to determine our predictions
+          and maintain an average accuracy of 90%. Although there are no
+          absolute assurances in sports betting, we apply tested risk
+          management strategies that ensure more profits than losses.
+        </p>
+  </div>
+  
+  
+<footer class="footer" style="background-color: darkslategray;">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Information Column -->
+      <div class="col-lg-4 col-md-4 mt-2">
+        <h5 style="color: white;">Information</h5>
+        <ul class="list-unstyled">
+          
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Disclaimer</a></li>
+
+        </ul>
+      </div>
+      <!-- Navigation Column -->
+      <div class="col-lg-4 col-md-4 mt-2">
+        <h5 style="color: white;">Navigation</h5>
+        <ul class="list-unstyled">
+          <li><a href="home.html">Predictions</a></li>
+          <li><a href="https://www.livescore.com/en/" target="_blank">Livescore</a></li>
+          <li><a href="https://m.forebet.com/en/football-tips-and-predictions-for-today" target="_blank">Forebet</a></li>
+          <li><a href="https://www.betika.com/en-ke/" target="_blank">Betika</a></li>
+        </ul>
+      </div>
+      <!-- Contact Column -->
+      <div class="col-lg-4 col-md-4 mt-2">
+        <h5 style="color: white;">Contact</h5>
+        <ul class="list-unstyled">
+          <li>Email: footy4teller@gmail.com</li>
+          <li>Phone: 0745676267</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Bootstrap JS (optional, for dropdowns, toggles, etc.) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
