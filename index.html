@@ -21,25 +21,31 @@
     .navbar-nav .nav-link:hover {
       color: aqua !important; /* Set color to aqua on hover */
     }
+    .navbar-brand img {
+    max-height: 40px; /* Adjust the max-height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
     /* Custom CSS for Jumbotron */
     .custom-jumbotron {
-      background-color: rgba(89, 153, 89, 0.514); /* Light green background */
-      margin-top: 0 !important; /* No margin on top */
-      border-radius: 0; /* No border radius */
-      text-align: center; /* Center text */
-      padding: 20px;
-      position: relative; /* Relative positioning for overlay */
-      overflow: hidden; /* Hide overflow */
-    }
+    background-color:rgba(47, 79, 79, 0.863); /* Adjust the RGBA values to match the navbar color */
+    margin-top: 0 !important; /* No margin on top */
+    border-radius: 0; /* No border radius */
+    text-align: center; /* Center text */
+    padding: 20px;
+    position: relative; /* Relative positioning for overlay */
+    overflow: hidden; /* Hide overflow */
+  }
     .jumbotron-image {
-      position: absolute; /* Absolute positioning for image */
-      top: 0;
-      left: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      z-index: -1; /* Behind content */
-      object-fit: cover; /* Cover the jumbotron size */
-    }
+    position: absolute; /* Absolute positioning for image */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    z-index: -1; /* Behind content */
+    object-fit: cover; /* Cover the jumbotron size */
+    opacity: 0.9; /* Adjust the opacity of the image */
+  }
     .jumbotron-content {
       color: white; /* Set text color to white */
        
@@ -165,7 +171,7 @@ h4{
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-custom">
-  <a class="navbar-brand" href="#" style="color: aqua;">Footy4teller</a>
+  <a class="navbar-brand" href="#" style="color: aqua;"><img src="images/logo.png" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fas fa-bars" style="color: aqua;"></i>
   </button>
@@ -188,7 +194,7 @@ h4{
 </nav>
 
 <div class="jumbotron custom-jumbotron container-fluid">
-  <img src="images/bannerbg.jpg" class="jumbotron-image" alt="">
+  <img src="images/bannerbg.png" class="jumbotron-image" alt="">
   <div class="row">
     <div class="col-lg-8 offset-lg-2 jumbotron-content mt-5">
       <h2 ><b>Free Football Predictions</b></h2>
@@ -360,7 +366,7 @@ h4{
     <!-- First Article -->
     <div class="col-lg-4 col-md-6 mb-4">
       <div class="card">
-        <img src="images/article1.jpg" class="card-img-top" alt="Article 1" style="height: 200px; object-fit: cover;">
+        <img src="images/article3.png" class="card-img-top" alt="Article 1" style="height: 200px; object-fit: cover;">
         <div class="card-body">
           <h5 class="card-title">Arsenal edge brenford</h5>
           <p class="card-text">Gunners take 2-1 win in London as German star Kai Havertz scores late to rescue his team.Arsenal remain top of premier league table</p>
@@ -371,7 +377,7 @@ h4{
     <!-- Second Article -->
     <div class="col-lg-4 col-md-6 mb-4">
       <div class="card">
-        <img src="images/article2.jpg" class="card-img-top" alt="Article 2" style="height: 200px; object-fit: cover;">
+        <img src="images/article3.png" class="card-img-top" alt="Article 2" style="height: 200px; object-fit: cover;">
         <div class="card-body">
           <h5 class="card-title">Atletico youth</h5>
           <p class="card-text">In the UEFA Youth League tournament, Atletico Madrid U19 takes a 1 place in the standings: with 15 points, 5 wins, 0 draws and 1 losses. </p>
@@ -382,7 +388,7 @@ h4{
     <!-- Third Article -->
     <div class="col-lg-4 col-md-6 mb-4">
       <div class="card">
-        <img src="images/article3.jpg" class="card-img-top" alt="Article 3" style="height: 200px; object-fit: cover;">
+        <img src="images/article3.png" class="card-img-top" alt="Article 3" style="height: 200px; object-fit: cover;">
         <div class="card-body">
           <h5 class="card-title">Women Soccer</h5>
           <p class="card-text">The United States have won four times. The other winners are Germany, with two titles, and Japan, Norway, and Spain with one title each.</p>
@@ -450,10 +456,10 @@ The system is usually automated, working totally without human interference or h
     <div class="row">
       <!-- Contact Column -->
       <div class="col-lg-4 col-md-4 mt-2">
-        <h5 style="color: white;">Contact</h5>
+        <h5 style="color: white;">Contact Us</h5>
         <ul class="list-unstyled">
-          <li>Email: footy4teller@gmail.com</li>
-          <li>Facebook: footy4teller</li>
+          <li>Email: Bookiemasters@gmail.com</li>
+          <li>Facebook: Bookies masters</li>
           <li>Phone: 0745676267</li>
         </ul>
       </div>
