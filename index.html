@@ -158,23 +158,23 @@ text-decoration: none;
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-custom">
-  <a class="navbar-brand" href="#" style="color: aqua;"><img src="images/logo.png" alt=""></a>
+  <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-bars" style="color: rgba(0, 255, 255, 0.884);"></i>
+    <i class="fas fa-bars" style="color: aqua;"></i>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="index.html">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#about">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="#contact">Contact</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Predictions</a>
+        <a class="nav-link" href="index.html">Predictions</a>
       </li>
     </ul>
   </div>
@@ -350,7 +350,7 @@ text-decoration: none;
       </div>
     </div>
   </div>
-
+<section>
   <div class="container-fluid about">
         <h6 class="mt-3">Free football predictions</h6>
         <p>
@@ -401,7 +401,7 @@ The system is usually automated, working totally without human interference or h
 
         
   </div>
-  
+</section>
   
 <footer class="footer" style="background-color: darkslategray;">
   <div class="container-fluid">
@@ -431,7 +431,7 @@ The system is usually automated, working totally without human interference or h
       <div class="col-lg-4 col-md-4 mt-2">
         <h6 style="color: rgba(255, 255, 255, 0.884);">Navigation</h6>
         <ul class="list-unstyled">
-          <li><a href="home.html">Predictions</a></li>
+          <li><a href="index.html">Predictions</a></li>
           <li><a href="https://www.livescore.com/en/" target="_blank">Livescore</a></li>
           <li><a href="https://m.forebet.com/en/football-tips-and-predictions-for-today" target="_blank">Forebet</a></li>
           <li><a href="https://www.betika.com/en-ke/" target="_blank">Betika</a></li>
@@ -440,7 +440,44 @@ The system is usually automated, working totally without human interference or h
       
     </div>
   </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center mt-1">
+        <p style="color: rgba(255, 255, 255, 0.884); font-size: x-small;">&copy; 2024 Bookies Masters. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get the "About" link element
+    var aboutLink = document.querySelector('a.nav-link[href="#about"]');
+
+    // Add click event listener to the "About" link
+    aboutLink.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent default link behavior
+
+      // Get the section element
+      var section = document.querySelector('section');
+
+      // Scroll the window to the section
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    var contactLink = document.querySelector('a.nav-link[href="#contact"]');
+
+    // Add click event listener to the "Contact" link
+    contactLink.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent default link behavior
+
+      // Get the footer element
+      var footer = document.querySelector('footer');
+
+      // Scroll the window to the footer
+      footer.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+</script>
 
 
 <!-- Bootstrap JS (optional, for dropdowns, toggles, etc.) -->
